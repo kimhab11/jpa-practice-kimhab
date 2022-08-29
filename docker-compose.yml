@@ -1,0 +1,22 @@
+version: '2.9'
+
+services:
+  database:
+    container_name: db-test
+    image: postgres:14.4-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_USER:-db-test}
+      POSTGRES_USER: ${POSTGRES_USER:-kimhab}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-123}
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - homework_db:/var/lib/postgresql/data
+    ports:
+      - "5430:5432"
+    restart: unless-stopped
+
+networks:
+    default:
+        driver: bridge
+volumes:
+    homework_db:
