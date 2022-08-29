@@ -20,9 +20,10 @@ public class Employee {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "gender")
+    @Column(name = "gender" , length = 7)
+
     private String gender;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, columnDefinition = "TEXT",  unique = true )
     private String email;
 }
