@@ -31,7 +31,7 @@ public class EmployeeController {
         return employeeRepository.deleteById(id);
     }
 
-    @PostMapping("add")
+    @PostMapping("/add")
     public Employee add(
             @RequestParam String name,
             @RequestParam String gender,

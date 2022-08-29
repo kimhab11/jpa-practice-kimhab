@@ -17,13 +17,13 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name" )
     private String name;
 
     @Column(name = "gender" , length = 7)
 
     private String gender;
 
-    @Column(name = "email", nullable = false, columnDefinition = "TEXT",  unique = true )
+    @Column(name = "email",  unique = true )
     private String email;
 }
